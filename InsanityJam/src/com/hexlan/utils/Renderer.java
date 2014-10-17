@@ -13,7 +13,10 @@ public class Renderer
 	
 	public static void register(Sprite target) 
 	{
-		targets.add(target);
+		if(!targets.contains(target))
+		{
+			targets.add(target);
+		}
 		sort();
 	}
 	
