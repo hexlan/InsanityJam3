@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
+import com.hexlan.audio.JukeBox;
 import com.hexlan.core.Game;
 import com.hexlan.entities.JavaGuy;
 import com.hexlan.utils.Content;
@@ -15,6 +16,7 @@ public class TestState extends GameState
 	
 	public TestState() 
 	{
+		JukeBox.init();
 		jg = new JavaGuy();
 	}
 	

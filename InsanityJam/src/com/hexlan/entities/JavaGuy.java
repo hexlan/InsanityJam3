@@ -3,6 +3,7 @@ package com.hexlan.entities;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
+import com.hexlan.audio.JukeBox;
 import com.hexlan.core.Game;
 import com.hexlan.utils.Animation;
 import com.hexlan.utils.Content;
@@ -21,6 +22,7 @@ public class JavaGuy extends Sprite
 		testAnim.setPlayMode(Animation.PlayMode.LOOP);
 		x = Game.SCREEN_WIDTH/2;
 		y = Game.SCREEN_HEIGHT - (34 + 16);
+		JukeBox.load("/SFX/playerjump.mp3", "playerjump");
 		jumping = false;
 	}
 	
@@ -29,7 +31,11 @@ public class JavaGuy extends Sprite
 		if(Input.isPressed(KeyEvent.VK_SPACE)) { register(); }
 		if(Input.isDown(KeyEvent.VK_LEFT)) { x-=3; }
 		if(Input.isDown(KeyEvent.VK_RIGHT)) { x+=3; }
-		if(Input.isDown(KeyEvent.VK_UP) && !jumping) { dy = -8; jumping = true;}
+		if(Input.isDown(KeyEvent.VK_UP) && !jumping) { 
+			dy = -8; 
+			jumping = true;
+			JukeBox.play("playerjump");
+		}
 		
 		testAnim.update();
 		
