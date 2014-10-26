@@ -117,10 +117,15 @@ public class Content
 				"G DOWN",
 				"E LEFT",
 				"G UP",
+				"A LEFT",
+				"NULL NULL",
+				"G UP",
 				"F LEFT",
-				"A RIGHT",
-				"F DOWN",
-				"A UP",
+				"E RIGHT",
+				"D DOWN",
+				"C1 UP",
+				"F NULL",
+				"C2 DOWN",
 			    "NULL NULL"};
 		return song;
 	}
