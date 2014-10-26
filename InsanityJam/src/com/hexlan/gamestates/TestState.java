@@ -10,6 +10,7 @@ import com.hexlan.core.Game;
 import com.hexlan.entities.Elf;
 import com.hexlan.entities.Player;
 import com.hexlan.utils.Content;
+import com.hexlan.utils.GSM;
 import com.hexlan.utils.Input;
 import com.hexlan.utils.JukeBox;
 
@@ -18,7 +19,8 @@ public class TestState extends GameState
 	Player p;
 	int timer, count;
 	Rectangle slashArea;
-	ArrayList<Elf> elves;
+	public static ArrayList<Elf> elves;
+	boolean game = true;
 	
 	public TestState() 
 	{
@@ -37,27 +39,41 @@ public class TestState extends GameState
 	
 	public void update() 
 	{
-		timer++;
-		if(timer >= 30)
+		if(game)
 		{
-			timer = 0;
-			count++;
-			if(count < Content.song.length)
+			timer++;
+			if(timer >= 30)
 			{
-				if(Content.song[count].equals("NULL NULL")) {}
-				else
+				timer = 0;
+				count++;
+				if(count < Content.song.length)
 				{
-					elves.add(new Elf(Content.song[count]));
+					if(Content.song[count].equals("NULL NULL")) {}
+					else
+					{
+						elves.add(new Elf(Content.song[count]));
+					}
+				}
+				JukeBox.play("Beat");
+			}
+			for(int i = 0; i < elves.size(); i++)
+			{
+				elves.get(i).update();
+			}
+			p.update();
+			
+			for(int i = 0; i < elves.size(); i++)
+			{
+				if(elves.get(i).getRec().intersects(p.getRec())) 
+				{
+					game = false;
 				}
 			}
-			JukeBox.play("Beat");
 		}
-		for(int i = 0; i < elves.size(); i++)
+		else
 		{
-			elves.get(i).update();
+			if(Input.isPressed(KeyEvent.VK_ENTER)) { GSM.setState(new TestState());}
 		}
-		p.update();
-		//jg.update();
 	}
 	
 	public void draw(Graphics2D g) 
@@ -66,7 +82,8 @@ public class TestState extends GameState
 		g.fillRect(0, 0, Game.SCREEN_WIDTH, Game.SCREEN_HEIGHT);
 		
 		//g.drawImage(Content.imgLoadExample, Game.SCREEN_WIDTH/2 - 60, 0, 120, 120, null);
-		
+		if(game)
+		{
 		g.setColor(new Color(80, 80, 80, 80));
 		g.fillRect(slashArea.x, slashArea.y, slashArea.width, slashArea.height);
 		g.fillRect(Game.SCREEN_WIDTH/2 - 20, 0, 40, Game.SCREEN_HEIGHT);
@@ -76,6 +93,12 @@ public class TestState extends GameState
 			elves.get(i).draw(g);
 		}
 		p.draw(g);
+		}
+		else
+		{
+			g.setColor(new Color(0, 0, 0));
+			g.drawString("You Lose", Game.SCREEN_WIDTH/2 - 20, Game.SCREEN_HEIGHT/2);
+		}
 	}
 	
 	public void dispose() 

@@ -1,6 +1,7 @@
 package com.hexlan.entities;
 
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 import com.hexlan.core.Game;
 import com.hexlan.utils.Animation;
@@ -54,7 +55,12 @@ public class Elf
 			anim = new Animation(-1, Content.idleDown, PlayMode.NORMAL);
 		}
 		
-		JukeBox.play(sound);
+		
+	}
+	
+	public Rectangle getRec()
+	{
+		return new Rectangle(x - w/2, y - h/2, w, h);
 	}
 	
 	public void update()
@@ -68,5 +74,10 @@ public class Elf
 	public void draw(Graphics2D g)
 	{
 		g.drawImage(anim.getImage(), x -anim.getImage().getWidth()/2, y -anim.getImage().getHeight()/2, null);
+	}
+
+	public void playSound() 
+	{
+		JukeBox.play(sound);
 	}
 }
