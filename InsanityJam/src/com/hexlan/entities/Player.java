@@ -99,7 +99,7 @@ public class Player
 	
 	public Rectangle getRec()
 	{
-		return new Rectangle(x - w/2, y - h/2, w, h);
+		return new Rectangle(x - w/4, y - h/4, w/2, h/2);
 	}
 	
 	private void elfCollision() 
