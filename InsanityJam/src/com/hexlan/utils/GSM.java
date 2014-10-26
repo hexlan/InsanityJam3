@@ -16,6 +16,7 @@ public class GSM
 	
 	public GSM()
 	{
+		JukeBox.init();
 		currentState = new TestState();
 	}
 	

@@ -3,11 +3,11 @@ package com.hexlan.entities;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
-import com.hexlan.audio.JukeBox;
 import com.hexlan.core.Game;
 import com.hexlan.utils.Animation;
 import com.hexlan.utils.Content;
 import com.hexlan.utils.Input;
+import com.hexlan.utils.JukeBox;
 
 public class JavaGuy extends Sprite
 {
@@ -29,8 +29,8 @@ public class JavaGuy extends Sprite
 	public void update()
 	{
 		if(Input.isPressed(KeyEvent.VK_SPACE)) { register(); }
-		if(Input.isDown(KeyEvent.VK_LEFT)) { x-=3; }
-		if(Input.isDown(KeyEvent.VK_RIGHT)) { x+=3; }
+		if(Input.isDown(KeyEvent.VK_LEFT)) { x-=5; }
+		if(Input.isDown(KeyEvent.VK_RIGHT)) { x+=5; }
 		if(Input.isDown(KeyEvent.VK_UP) && !jumping) { 
 			dy = -8; 
 			jumping = true;

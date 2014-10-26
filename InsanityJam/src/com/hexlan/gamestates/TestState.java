@@ -4,20 +4,22 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
-import com.hexlan.audio.JukeBox;
 import com.hexlan.core.Game;
 import com.hexlan.entities.JavaGuy;
 import com.hexlan.utils.Content;
 import com.hexlan.utils.Input;
+import com.hexlan.utils.JukeBox;
 
 public class TestState extends GameState
 {
 	JavaGuy jg;
+	int timer;
 	
 	public TestState() 
 	{
-		JukeBox.init();
+		JukeBox.load("/SFX/Beat.mp3", "Beat");
 		jg = new JavaGuy();
+		timer = 0;
 	}
 	
 	public void handleInput() 
@@ -28,6 +30,12 @@ public class TestState extends GameState
 	
 	public void update() 
 	{
+		timer++;
+		if(timer >= 60)
+		{
+			timer = 0;
+			JukeBox.play("Beat");
+		}
 		jg.update();
 	}
 	
