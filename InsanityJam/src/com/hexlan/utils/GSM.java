@@ -18,6 +18,15 @@ public class GSM
 	{
 		JukeBox.init();
 		JukeBox.load("/SFX/Beat.mp3", "Beat");
+		
+		JukeBox.load("/SFX/C1.mp3", "C1");
+		JukeBox.load("/SFX/D.mp3", "D");
+		JukeBox.load("/SFX/E.mp3", "E");
+		JukeBox.load("/SFX/F.mp3", "F");
+		JukeBox.load("/SFX/G.mp3", "G");
+		JukeBox.load("/SFX/A.mp3", "A");
+		JukeBox.load("/SFX/A Extended.mp3", "A Extended");
+		JukeBox.load("/SFX/C2.mp3", "C2");
 		currentState = new TestState();
 	}
 	
@@ -40,6 +49,6 @@ public class GSM
 	public void draw(Graphics2D g)
 	{
 		currentState.draw(g);
-		Renderer.draw(g);
+		//Renderer.draw(g);
 	}
 }

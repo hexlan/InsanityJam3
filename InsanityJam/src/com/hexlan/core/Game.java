@@ -21,8 +21,8 @@ import com.hexlan.utils.Input;
 @SuppressWarnings("serial")
 public class Game extends JPanel implements KeyListener, Runnable
 {
-	public static final int SCREEN_WIDTH = 800;
-	public static final int SCREEN_HEIGHT = 600;
+	public static final int SCREEN_WIDTH = 840;
+	public static final int SCREEN_HEIGHT = 840;
 	
 	private Thread thread;
 	private boolean running;

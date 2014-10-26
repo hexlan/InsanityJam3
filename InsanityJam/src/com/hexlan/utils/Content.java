@@ -6,6 +6,12 @@
 package com.hexlan.utils;
 
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
@@ -13,9 +19,19 @@ import javax.swing.JOptionPane;
 public class Content 
 {
 	// Static Variables
+	public static String[] song = loadSong();
+	
 	public static BufferedImage imgLoadExample = loadImage("/images/Java.png");
 	
-	public static BufferedImage[] sheetLoadExample = loadSheet("/images/SpriteSheet.png", 50);
+	public static BufferedImage[] idleUp = loadSheet("/images/idleUp.png", 40);
+	public static BufferedImage[] idleDown = loadSheet("/images/idleDown.png", 40);
+	public static BufferedImage[] idleLeft = loadSheet("/images/idleLeft.png", 40);
+	public static BufferedImage[] idleRight = loadSheet("/images/idleRight.png", 40);
+	
+	public static BufferedImage[] attackUp = loadSheet("/images/attackUp.png", 80);
+	public static BufferedImage[] attackDown = loadSheet("/images/attackDown.png", 80);
+	public static BufferedImage[] attackLeft = loadSheet("/images/attackLeft.png", 80);
+	public static BufferedImage[] attackRight = loadSheet("/images/attackRight.png", 80);
 	
 	// Methods
 	public static BufferedImage loadImage(String s)
@@ -34,6 +50,48 @@ public class Content
 		return null;
 	}
 	
+	private static String[] loadSong() 
+	{
+		String[] song = 
+			   {"NULL NULL",
+				"NULL NULL",
+				"NULL NULL",
+				"NULL NULL",
+				"C1 RIGHT",
+				"NULL NULL",
+				"C1 RIGHT",
+				"NULL NULL",
+				"C1 RIGHT",
+				"NULL NULL",
+				"C1 RIGHT",
+				"NULL NULL",
+				"D DOWN",
+				"NULL NULL",
+				"D DOWN",
+				"NULL NULL",
+				"D DOWN",
+				"NULL NULL",
+				"D DOWN",
+				"NULL NULL",
+				"E DOWN",
+				"NULL NULL",
+				"E LEFT",
+				"NULL NULL",
+				"E LEFT",
+				"NULL NULL",
+				"E LEFT",
+				"NULL NULL",
+				"F UP",
+				"NULL NULL",
+				"F UP",
+				"NULL NULL",
+				"F UP",
+				"NULL NULL",
+				"F UP",
+			    "NULL NULL"};
+		return song;
+	}
+
 	public static BufferedImage[] loadSheet(String s, int w)
 	{
 		BufferedImage[] temp;
