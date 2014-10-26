@@ -17,6 +17,7 @@ public class GSM
 	public GSM()
 	{
 		JukeBox.init();
+		JukeBox.load("/SFX/Beat.mp3", "Beat");
 		currentState = new TestState();
 	}
 	
