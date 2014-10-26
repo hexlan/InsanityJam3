@@ -34,7 +34,7 @@ public class JavaGuy extends Sprite
 		if(Input.isDown(KeyEvent.VK_UP) && !jumping) { 
 			dy = -8; 
 			jumping = true;
-			JukeBox.play("playerjump");
+			//JukeBox.play("playerjump");
 		}
 		
 		testAnim.update();

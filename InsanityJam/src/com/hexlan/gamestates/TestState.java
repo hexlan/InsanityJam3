@@ -31,7 +31,7 @@ public class TestState extends GameState
 	public void update() 
 	{
 		timer++;
-		if(timer >= 60)
+		if(timer >= 30)
 		{
 			timer = 0;
 			JukeBox.play("Beat");
