@@ -1,5 +1,6 @@
 package com.hexlan.gamestates;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
@@ -26,6 +27,7 @@ public class WinState extends GameState
 
 	@Override
 	public void draw(Graphics2D g) {
+		g.setColor(Color.BLACK);
 		g.drawString("You Win!", Game.SCREEN_WIDTH/2 - 20, Game.SCREEN_HEIGHT/2);
 		g.drawString("Trivia: What is the 201st digit of pi?", Game.SCREEN_WIDTH/2 - 20, Game.SCREEN_HEIGHT/2+20);
 	}
