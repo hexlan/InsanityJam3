@@ -54,6 +54,10 @@ public class TestState extends GameState
 						elves.add(new Elf(Content.song[count]));
 					}
 				}
+				else if(count > Content.song.length+3)
+				{
+					GSM.setState(new WinState());
+				}
 				JukeBox.play("Beat");
 			}
 			for(int i = 0; i < elves.size(); i++)
@@ -84,10 +88,12 @@ public class TestState extends GameState
 		//g.drawImage(Content.imgLoadExample, Game.SCREEN_WIDTH/2 - 60, 0, 120, 120, null);
 		if(game)
 		{
+			g.drawImage(Content.map, -14, 0, null);
 		g.setColor(new Color(80, 80, 80, 80));
-		g.fillRect(slashArea.x, slashArea.y, slashArea.width, slashArea.height);
-		g.fillRect(Game.SCREEN_WIDTH/2 - 20, 0, 40, Game.SCREEN_HEIGHT);
-		g.fillRect(0, Game.SCREEN_HEIGHT/2 - 20, Game.SCREEN_WIDTH, 40);
+		//g.fillRect(slashArea.x, slashArea.y, slashArea.width, slashArea.height);
+		//g.fillRect(Game.SCREEN_WIDTH/2 - 20, 0, 40, Game.SCREEN_HEIGHT);
+		//g.fillRect(0, Game.SCREEN_HEIGHT/2 - 20, Game.SCREEN_WIDTH, 40);
+		//g.drawString("Size: "+elves.size(), 10, 10);
 		for(int i = 0; i < elves.size(); i++)
 		{
 			elves.get(i).draw(g);

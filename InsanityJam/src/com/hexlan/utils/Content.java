@@ -21,17 +21,22 @@ public class Content
 	// Static Variables
 	public static String[] song = loadSong();
 	
-	public static BufferedImage imgLoadExample = loadImage("/images/Java.png");
+	public static BufferedImage map = loadImage("/images/Map.png");
 	
-	public static BufferedImage[] idleUp = loadSheet("/images/idleUp.png", 40);
-	public static BufferedImage[] idleDown = loadSheet("/images/idleDown.png", 40);
-	public static BufferedImage[] idleLeft = loadSheet("/images/idleLeft.png", 40);
-	public static BufferedImage[] idleRight = loadSheet("/images/idleRight.png", 40);
+	public static BufferedImage[] elfUp = loadSheet("/images/south_elf_sprite_sheet.png", 40);
+	public static BufferedImage[] elfDown = loadSheet("/images/north_elf_sprite_sheet.png", 40);
+	public static BufferedImage[] elfLeft = loadSheet("/images/east_elf_sprite_sheet.png", 40);
+	public static BufferedImage[] elfRight = loadSheet("/images/west_elf_sprite_sheet.png", 40);
 	
-	public static BufferedImage[] attackUp = loadSheet("/images/attackUp.png", 80);
-	public static BufferedImage[] attackDown = loadSheet("/images/attackDown.png", 80);
-	public static BufferedImage[] attackLeft = loadSheet("/images/attackLeft.png", 80);
-	public static BufferedImage[] attackRight = loadSheet("/images/attackRight.png", 80);
+	public static BufferedImage[] idleUp = loadSheet("/images/hero_back_1.png", 40);
+	public static BufferedImage[] idleDown = loadSheet("/images/hero_front_2.png", 40);
+	public static BufferedImage[] idleLeft = loadSheet("/images/hero_left_1.png", 40);
+	public static BufferedImage[] idleRight = loadSheet("/images/hero_right_1.png", 40);
+	
+	public static BufferedImage[] attackUp = loadSheet("/images/hero_back_attack.png", 80);
+	public static BufferedImage[] attackDown = loadSheet("/images/hero_front_attack.png", 80);
+	public static BufferedImage[] attackLeft = loadSheet("/images/hero_left_attack.png", 80);
+	public static BufferedImage[] attackRight = loadSheet("/images/hero_right_attack.png", 80);
 	
 	// Methods
 	public static BufferedImage loadImage(String s)
@@ -124,7 +129,7 @@ public class Content
 				"E RIGHT",
 				"D DOWN",
 				"C1 UP",
-				"F NULL",
+				"NULL NULL",
 				"C2 DOWN",
 			    "NULL NULL"};
 		return song;

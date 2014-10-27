@@ -28,7 +28,7 @@ public class Elf
 			dy = 0;
 			x = 20;
 			y = Game.SCREEN_HEIGHT/2;
-			anim = new Animation(-1, Content.idleRight, PlayMode.NORMAL);
+			anim = new Animation(2, Content.elfRight, PlayMode.LOOP);
 		}
 		else if(stuff[1].equalsIgnoreCase("left"))
 		{
@@ -36,7 +36,7 @@ public class Elf
 			dy = 0;
 			x = Game.SCREEN_WIDTH - 20;
 			y = Game.SCREEN_HEIGHT/2;
-			anim = new Animation(-1, Content.idleLeft, PlayMode.NORMAL);
+			anim = new Animation(2, Content.elfLeft, PlayMode.LOOP);
 		}
 		else if(stuff[1].equalsIgnoreCase("up"))
 		{
@@ -44,7 +44,7 @@ public class Elf
 			dy = -4;
 			x = Game.SCREEN_WIDTH/2;
 			y = Game.SCREEN_HEIGHT - 20;
-			anim = new Animation(-1, Content.idleUp, PlayMode.NORMAL);
+			anim = new Animation(2, Content.elfUp, PlayMode.LOOP);
 		}
 		else if(stuff[1].equalsIgnoreCase("down"))
 		{
@@ -52,7 +52,7 @@ public class Elf
 			dy = 4;
 			x = Game.SCREEN_WIDTH/2;
 			y = 20;
-			anim = new Animation(-1, Content.idleDown, PlayMode.NORMAL);
+			anim = new Animation(2, Content.elfDown, PlayMode.LOOP);
 		}
 		
 		

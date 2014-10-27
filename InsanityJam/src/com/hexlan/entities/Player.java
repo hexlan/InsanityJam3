@@ -113,6 +113,7 @@ public class Player
 				{
 					TestState.elves.get(i).playSound();
 					TestState.elves.remove(i);
+					i--;
 				}
 			}
 			
@@ -123,6 +124,7 @@ public class Player
 				{
 					TestState.elves.get(i).playSound();
 					TestState.elves.remove(i);
+					i--;
 				}
 			}
 			
@@ -133,6 +135,7 @@ public class Player
 				{
 					TestState.elves.get(i).playSound();
 					TestState.elves.remove(i);
+					i--;
 				}
 			}
 			
@@ -143,6 +146,7 @@ public class Player
 				{
 					TestState.elves.get(i).playSound();
 					TestState.elves.remove(i);
+					i--;
 				}
 			}
 		}
